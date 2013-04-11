@@ -1,5 +1,6 @@
 # MSM8660 WILL CONTAIN ANY MISSING (GPS, RIL, WIFI)
 # INFORMATION.
+-include device/htc/msm8660-common/BoardConfigCommon.mk
 
 # BOOTLOADER
 TARGET_BOOTLOADER_BOARD_NAME := pyramid
@@ -8,7 +9,7 @@ TARGET_BOOTLOADER_BOARD_NAME := pyramid
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 android.boot.hardware=pyramid no_console_suspend=1
-TARGET_KERNEL_SOURCE := kernel/msm
+TARGET_KERNEL_SOURCE := kernel
 TARGET_KERNEL_CONFIG := pyramid_defconfig
 
 # BOOT
