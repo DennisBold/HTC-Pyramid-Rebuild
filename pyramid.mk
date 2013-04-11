@@ -1,7 +1,5 @@
-# QCOM COMMON
+# QCOM COMMON & MSM8660 COMMON
 $(call inherit-product, device/qcom/common/common.mk)
-
-# MSM8660 COMMON
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
 
 # OVERLAYS
@@ -11,12 +9,8 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/ramdisk/fstab.pyramid:root/fstab.pyramid \
     device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
     device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
-    device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
-
-PRODUCT_COPY_FILES += \
-    device/htc/pyramid/vold.fstab:system/etc/vold.fstab
-
-PRODUCT_COPY_FILES += \
+    device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
+    device/htc/pyramid/vold.fstab:system/etc/vold.fstab \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -24,6 +18,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.lockprof.threshold=500 \
     ro.com.google.locationfeatures=1 \
     dalvik.vm.dexopt-flags=m=y
+
+# File System Table
+PRODUCT_PACKAGES += fstab.pyramid
 
 # GPS
 PRODUCT_PACKAGES += \
